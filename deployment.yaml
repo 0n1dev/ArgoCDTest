@@ -1,0 +1,20 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: argocd-test-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argocd-test-app
+  template:
+    metadata:
+      labels:
+        app: argocd-test-app
+    spec:
+      containers:
+      - name: argocd-test-app
+        image: registry.koo.gg/kooggbot:latest
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
