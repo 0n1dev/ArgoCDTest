@@ -17,6 +17,6 @@ spec:
         image: registry.koo.gg/kooggbot:latest
         ports:
         - containerPort: 8080
+        imagePullPolicy: Always
         imagePullSecrets:
         - name: docker-registry-secret
-        imagePullPolicy: Always
